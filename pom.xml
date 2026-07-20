@@ -4,11 +4,30 @@
   <groupId>com.userdb.rssfeed</groupId>
   <artifactId>RSSFeedConfigTool</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.8.7</version>
   <name>RSSFeedConfigTool</name>
   <url>http://maven.apache.org</url>
   <build>
-    <finalName>rssfeed_1.8.6</finalName>
+    <finalName>rssfeed</finalName>
+
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+        </resource>
+    </resources>
+
+    <plugins>
+        <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifestEntries>
+                        <Plugin-Class>org.kmallan.azureus.rssfeed.Plugin</Plugin-Class>
+                    </manifestEntries>
+                </archive>
+            </configuration>
+        </plugin>
+    </plugins>
   </build>
   <properties>
     <maven.compiler.release>8</maven.compiler.release>
